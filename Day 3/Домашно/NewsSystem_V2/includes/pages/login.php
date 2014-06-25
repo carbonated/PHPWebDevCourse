@@ -4,15 +4,14 @@ if (!defined('INC'))
 	exit;
 
 include './includes/config.php'; //Зареждаме главния конфигурационен файл на сайта
+include './includes/functions.php'; //Зареждаме файла с функциите
 
-if (isset($_SESSION['isLogged'])) {/* Ако потребителя има в сесията си
+if (isUserLogged()) {/* Ако потребителя има в сесията си
  * isLogged, то значи е логнат и не му трябва нова регистрация
  */
 	header('Location: index.php?page='); //Пренасочваме потребителя към началната страница
 	exit;
 }
-
-include './includes/functions.php'; //Зареждаме файла с функциите
 
 $data = array();
 

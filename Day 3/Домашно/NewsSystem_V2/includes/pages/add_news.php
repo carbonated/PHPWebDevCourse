@@ -4,13 +4,12 @@ if (!defined('INC'))
 	exit;
 
 include './includes/config.php'; //Зареждаме главния конфигурационен файл на сайта
+include './includes/functions.php'; //Зареждаме файла с функциите
 
-if (!isset($_SESSION['isLogged'])) {
+if (!isUserLogged()) {
 	header('Location: index.php?page=');
 	exit;
 }
-
-include './includes/functions.php'; //Зареждаме файла с функциите
 
 $data = array();
 
